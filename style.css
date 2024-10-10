@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #87CEEB, #FFD700); /* Sfondo con gradiente */
+    font-family: Arial, sans-serif; /* Font per il testo */
+}
+
+#game-container {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    background-color: #87CEEB; /* Cielo */
+    border: 2px solid #000;
+    overflow: hidden;
+    border-radius: 15px; /* Angoli arrotondati */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Ombra del contenitore */
+}
+
+/* Pulsante di riavvio */
+#restart-button {
+    padding: 10px 20px; /* Padding del pulsante */
+    font-size: 18px; /* Dimensione del font */
+    color: white; /* Colore del testo */
+    background-color: #FF4500; /* Colore di sfondo del pulsante */
+    border: none; /* Nessun bordo */
+    border-radius: 5px; /* Angoli arrotondati */
+    cursor: pointer; /* Cambio del cursore */
+    transition: background-color 0.3s; /* Transizione per il colore di sfondo */
+}
+
+#restart-button:hover {
+    background-color: #FF6347; /* Colore di sfondo quando il mouse passa sopra */
+}
+
+
+/* Aereo del giocatore */
+#bird {
+    position: absolute;
+    width: 100px; /* Aereo più grande */
+    height: 65px;
+    top: 250px;
+    left: 50px;
+    background-image: url('https://i.pinimg.com/originals/e9/54/cb/e954cb7e56f0b6bc5c4ef23d5eb2c140.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.2s ease; /* Rotazione dell'aereo */
+}
+
+#hitbox {
+    position: absolute;
+    top: 10px; /* Regolazione della hitbox */
+    left: 15px;
+    width: 30px; /* Hitbox più piccola rispetto all'aereo */
+    height: 30px;
+    background-color: rgba(255, 0, 0, 0.5); /* Colore trasparente per debugging (rimuovi se non necessario) */
+    border-radius: 100%;
+}
+
+#lives {
+    position: absolute;
+    top: 50px; /* Posizione delle vite */
+    left: 10px; /* Lato sinistro */
+    font-size: 18px;
+    color: white;
+}
+
+#lives img {
+    width: 100px; /* Dimensione dei missili */
+    height: auto;
+    vertical-align: middle; /* Allinea verticalmente */
+}
+/* Sole sullo sfondo con Osama Bin Laden al centro */
+#sun {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: yellow; /* Colore del sole */
+    border-radius: 50%;
+    image-rendering: optimizeSpeed;
+    top: 50px; /* Posizione del sole */
+    left: 50%;
+    transform: translateX(-50%); /* Centra il sole orizzontalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0; /* Porta il sole dietro il gioco */
+}
+
+#sun img {
+    width: 80px; /* Aumenta la larghezza (puoi regolare la dimensione qui) */
+    height: auto; /* Mantiene l'altezza proporzionale */
+    background-color: transparent; /* Trasparente attorno a Osama */
+}
+
+#obstacle, #obstacleTop {
+    position: absolute;
+    width: 80px;
+    right: 0;
+    background-color: transparent; /* Usiamo un'immagine per il grattacielo */
+    background-size: cover;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+#obstacle {
+    bottom: 0;
+    background-image: url('bot.JPG'); /* Texture del grattacielo inferiore */
+    background-size: 100% 100%; /* Adattiamo la texture al div */
+}
+
+#obstacleTop {
+    top: 0;
+    background-image: url('top.JPG'); /* Texture del grattacielo superiore */
+    background-size: 100% 100%; /* Adattiamo la texture al div */
+}
+#score {
+    position: absolute;
+    top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Aggiungi questo codice al tuo CSS esistente */
+
+#game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+}

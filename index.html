@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-container">
+        
+        <div id="sun">
+            <img src="https://pngimg.com/uploads/osama_bin_laden/osama_bin_laden_PNG27.png" alt="Osama Bin Laden">
+        </div>
+        <div id="bird">
+            <div id="hitbox"></div> <!-- Hitbox ridotta all'interno dell'aereo -->
+        </div>
+        <div id="obstacle"></div>
+        <div id="obstacleTop"></div>
+    </div>
+    <div id="score">Score: 0</div>
+    <div id="lives">
+        Lives: <span id="livesCount">3</span>
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/015/310/452/small/ballistic-missile-in-realistic-style-military-rocket-colorful-illustration-png.png" alt="Missile" id="missile" />
+    </div>
+    <div id="game-over" style="display: none;">
+        <p>Game Over, Osama è fiero di te!</p>
+        <img src="https://pngimg.com/uploads/osama_bin_laden/osama_bin_laden_PNG27.png" alt="Osama" style="width: 100px; height: auto;">
+        <button id="restart-button" onclick="restartGame()">Restart</button>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

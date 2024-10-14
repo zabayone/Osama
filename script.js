@@ -180,6 +180,11 @@ function resetObstacles() {
     obstacleTop.style.height = gapPosition + 'px';
 }
 
+document.addEventListener('touchmove', function(event) {
+    event.preventDefault(); // Prevents accidental scrolling on mobile during the game
+}, { passive: false });
+
 // Avvia il gioco
 let gameInterval; // Variabile per il ciclo di gioco
 startGame();
+

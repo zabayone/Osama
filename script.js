@@ -16,6 +16,7 @@ let score = 0;
 
 let lives = 3; // Numero di vite iniziali
 let invulnerable = false; // Stato di invulnerabilità
+let scrcount= 0;
 const invulnerabilityDuration = 2000; // Durata dell'invulnerabilità in millisecondi
 
 // Inizializziamo l'altezza e la posizione del buco
@@ -61,6 +62,13 @@ function gameLoop() {
         gapPosition = Math.random() * (400 - gapHeight) + 100; // Genera un nuovo buco
         score++;
         updateScore(); // Aggiorna il punteggio
+        scrcount ++;
+        if (scrcount==10 && lives !=10)
+        {
+            lives++;
+            updateLives();
+            scrcount=0;
+        }
     }
 
     // Applica la posizione aggiornata agli ostacoli
@@ -81,6 +89,8 @@ function gameLoop() {
             gameOver(); // Se non ci sono più vite, termina il gioco
         }
     }
+
+    
 }
 
 function jump(event) {
@@ -93,14 +103,14 @@ function jump(event) {
 }
 
 function checkCollision() {
-    const birdRect = bird.getBoundingClientRect();
+    const birdRect = hitbox.getBoundingClientRect();
     const obstacleRect = obstacle.getBoundingClientRect();
     const obstacleTopRect = obstacleTop.getBoundingClientRect();
 
     // Definire una hitbox più piccola
-    const hitboxPadding = 20; // Rimpicciolisci la hitbox di 20px su ogni lato
+    const hitboxPadding = 0; // Rimpicciolisci la hitbox di 20px su ogni lato
     const birdHitbox = {
-        left: birdRect.left + hitboxPadding,
+        left: birdRect.left - hitboxPadding,
         right: birdRect.right - hitboxPadding,
         top: birdRect.top + hitboxPadding,
         bottom: birdRect.bottom - hitboxPadding

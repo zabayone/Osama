@@ -4,56 +4,74 @@
     box-sizing: border-box;
 }
 
-/* Default styles (for larger screens) are as they are now */
-
 /* Styles for screens with width less than 600px (mobile devices) */
 @media (max-width: 600px) {
     #game-container {
-        width: 300px;  /* Shrink the game container */
-        height: 450px; /* Adjust height to fit mobile screens */
+        width: 280px;  /* Shrink the game container */
+        height: 420px; /* Reduce height to fit mobile screens */
         border-radius: 10px;
     }
 
     #bird {
-        width: 80px; /* Shrink the bird for mobile */
-        height: 50px;
+        width: 60px; /* Shrink the bird for mobile */
+        height: 40px;
+        top: 180px;  /* Adjust initial position of the bird */
+        left: 30px;  /* Adjust position */
+    }
+
+    #hitbox {
+        width: 20px; /* Smaller hitbox */
+        height: 20px;
+        top: 8px;
+        left: 10px;
     }
 
     #sun {
-        width: 100px; /* Shrink the sun */
-        height: 100px;
+        width: 80px; /* Shrink the sun */
+        height: 80px;
     }
 
     #sun img {
-        width: 60px; /* Shrink Osama Bin Laden's image */
+        width: 50px; /* Shrink Osama Bin Laden's image */
     }
 
     #lives {
+        top: 40px; /* Adjust position of lives counter */
         font-size: 14px; /* Smaller font size for lives */
     }
 
     #lives img {
-        width: 70px; /* Reduce missile size */
+        width: 60px; /* Reduce missile size */
     }
 
     #obstacle, #obstacleTop {
-        width: 60px; /* Narrower obstacles for mobile */
+        width: 50px; /* Narrower obstacles for mobile */
+    }
+
+    #obstacle {
+        background-size: cover;
+    }
+
+    #obstacleTop {
+        background-size: cover;
     }
 
     #score {
-        font-size: 20px; /* Adjust font size for score */
+        font-size: 18px; /* Adjust font size for score */
+        top: 5px;
     }
 
     #game-over {
-        font-size: 18px; /* Make the Game Over message smaller */
+        font-size: 16px; /* Make the Game Over message smaller */
         padding: 15px;
     }
 
     #restart-button {
         padding: 8px 16px; /* Make the restart button smaller */
-        font-size: 16px;
+        font-size: 14px;
     }
 }
+
 
 body {
     display: flex;
